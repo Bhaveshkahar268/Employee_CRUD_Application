@@ -346,7 +346,7 @@ CREATE TABLE employees (
 );
 ```
 
-Update the database credentials inside the Java source code if required:
+Update the database credentials inside the Java source code on line 42 & line 156:
 
 ```java
 String url = "jdbc:mysql://localhost:3306/employee_db";
