@@ -39,6 +39,9 @@ return this.name;
 class CityModel
 {
 private java.util.List<City> cities= new ArrayList<>();
+String url = "jdbc:mysql://localhost:3306/employee_db";
+String username = "root";
+String password = "your_password";
 public java.util.List<City> getCities()
 {
 //you write implementation
@@ -46,7 +49,7 @@ try
 {
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection connection;
-connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_data","luffy","2608");
+connection=DriverManager.getConnection(url,username,password);
 Statement statement;
 statement=connection.createStatement();
 ResultSet resultSet;
@@ -153,6 +156,9 @@ class EmployeeModel extends AbstractTableModel
 {
 private java.util.List<Employee> employees;
 private String [] titles;
+String url = "jdbc:mysql://localhost:3306/employee_db";
+String username = "root";
+String password = "your_password";
 public EmployeeModel()
 {
 this.populateEmployees();
@@ -169,7 +175,7 @@ try
 {
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection connection;
-connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_data","luffy","2608");
+connection=DriverManager.getConnection(url,username,password);
 Statement statement;
 statement=connection.createStatement();
 ResultSet resultSet;
@@ -245,7 +251,7 @@ if(e.getEmpId().equalsIgnoreCase(employee.getEmpId())) throw new ModelException(
 }
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection connection;
-connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_data","luffy","2608");
+connection=DriverManager.getConnection(url,username,password);
 PreparedStatement preparedStatement;
 preparedStatement=connection.prepareStatement("select * from city where name=?");
 preparedStatement.setString(1,employee.getCityName());
@@ -306,7 +312,7 @@ removeAtIndex=employeeModel.getEmployeeIndex(employee.getEmpId());
 employees.remove(removeAtIndex);
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection connection;
-connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_data","luffy","2608");
+connection=DriverManager.getConnection(url,username,password);
 PreparedStatement preparedStatement;
 preparedStatement=connection.prepareStatement("select * from city where name=?");
 preparedStatement.setString(1,employee.getCityName());
@@ -406,7 +412,7 @@ try
 {
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection connection;
-connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_data","luffy","2608");
+connection=DriverManager.getConnection(url,username,password);
 PreparedStatement preparedStatement;
 preparedStatement=connection.prepareStatement("delete from employee where emp_id=?");
 preparedStatement.setString(1,employee.getEmpId());
