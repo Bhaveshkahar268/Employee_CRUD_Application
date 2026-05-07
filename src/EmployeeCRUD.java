@@ -39,7 +39,7 @@ return this.name;
 class CityModel
 {
 private java.util.List<City> cities= new ArrayList<>();
-String url = "jdbc:mysql://localhost:3306/employee_db";
+String url = "jdbc:mysql://localhost:3306/EMPLOYEE_DATA";
 String username = "root";
 String password = "your_password";
 public java.util.List<City> getCities()
@@ -156,7 +156,7 @@ class EmployeeModel extends AbstractTableModel
 {
 private java.util.List<Employee> employees;
 private String [] titles;
-String url = "jdbc:mysql://localhost:3306/employee_db";
+String url = "jdbc:mysql://localhost:3306/EMPLOYEE_DATA";
 String username = "root";
 String password = "your_password";
 public EmployeeModel()
